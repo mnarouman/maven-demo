@@ -1,0 +1,1 @@
+java -jar jenkins-cli.jar -s http://localhost:9080/jenkins declarative-linter < Jenkinsfile --username admin --password password

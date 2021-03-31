@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Nexter GCR Test Suite" verbose="2">
+  <test name="Services Test">
+   <groups>
+      <run>
+	  	<!--<include name="configuration"/>
+        <include name="crud"/>
+        <exclude name=""/>-->
+      </run>
+    </groups>
+
+    <classes>
+       
+       <!--<class name="fr.nexter.gcr.test.affaire.AffaireTest"/>-->
+        <!--<class name="fr.nexter.gcr.test.edition.EditionTest"/>-->
+    </classes>
+  </test>
+</suite>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<groupId>fr.mna.test</groupId>
+		<artifactId>mavenTestProject</artifactId>
+		<version>1.0</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>fr.mna.test</groupId>
+	<artifactId>module2</artifactId>
+	<version>1.0</version>
+
+	<name>module2</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<param1>mon param surchargé 2</param1>
+		<testType>T2</testType>
+	</properties>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.gmaven</groupId>
+				<artifactId>gmaven-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+			</plugin>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven.surefire.plugin.version}</version>
+                <configuration>
+                    <test>**/*.java</test>
+                    <groups>
+                        fr.mna.${testType}
+                    </groups>
+                    <reportsDirectory>${basedir}/target/surefire-reports</reportsDirectory>
+                    <threadCount>1</threadCount>
+                    <failIfNoTests>false</failIfNoTests>
+                    <forkMode>once</forkMode>
+                    <forkCount>3</forkCount>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.surefire</groupId>
+                        <artifactId>surefire-junit47</artifactId>
+                        <version>${maven.surefire.plugin.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                        <version>1.2</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+              <groupId>org.owasp</groupId>
+              <artifactId>dependency-check-maven</artifactId>
+              <version>5.3.2</version>
+              <configuration>
+                <format>ALL</format>
+              </configuration>
+              <executions>
+                  <execution>
+                      <goals>
+                          <goal>check</goal>
+                      </goals>
+                  </execution>
+              </executions>
+            </plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>fr.mna.test</groupId>
+			<artifactId>module1</artifactId>
+			<version>1.0</version>
+		</dependency>
+        <dependency>
+            <groupId>fr.mna.test</groupId>
+            <artifactId>module1</artifactId>
+            <version>1.0</version>
+            <scope>test</scope>
+            <type>test-jar</type>
+        </dependency>
+        
+	</dependencies>
+</project>
