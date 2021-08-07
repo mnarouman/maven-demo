@@ -75,3 +75,4 @@ src/test/generated/
 debug.txt
 module1/.checkstyle
 module2/.checkstyle
+_docs/
