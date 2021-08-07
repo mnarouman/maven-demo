@@ -1,4 +1,3 @@
-jenkins/
 # Eclipse
 *.pydevproject
 .project
@@ -76,4 +75,3 @@ src/test/generated/
 debug.txt
 module1/.checkstyle
 module2/.checkstyle
-test-output

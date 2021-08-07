@@ -1,1 +1,0 @@
-wget http://localhost:8080/jenkins/jnlpJars/jenkins-cli.jar

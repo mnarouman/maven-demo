@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://xfire.codehaus.org/config/1.0">
-  <service>
-    <serviceClass>progress.services._654ora.WS654ORAServiceImpl</serviceClass>
-    <wsdlURL>file:/D:/java/workspace/bt/hrh/dev/WS654ORA.wsdl</wsdlURL>
-    <serviceFactory>org.codehaus.xfire.jaxb2.JaxbServiceFactory</serviceFactory>
-  </service>
-</beans>
-
